@@ -5,18 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Temitope Odushola</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
         <nav class="main-nav">
-
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+            </div>
+            <div class="links">
+                <input type="checkbox" id="hamburger">
+                <label for="hamburger" class="show-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#music">Music</a></li>
+                    <li><a href="#shows">Shows</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <div class="toggle">
+                        <label for="hamburger" class="hide-menu-btn">
+                            <i class="fas fa-times"></i>
+                        </label>
+                    </div>
+                </ul>
+            </div>
         </nav>
         <div class="header-content">
+            <div class="left">
+                <div class="icons">
+                    <div class="icon">
+                        <img src="img/sound-waves.svg" alt="icon">
+                    </div>
+                    <div class="icon">
+                        <img src="img/music-icon.png" alt="icon">
+                    </div>
+                    <div class="icon">
+                        <img src="img/like-icon.png" alt="icon">
+                    </div>
+                </div>
+                <div class="text">
+                    <p class="firstname">TEMITOPE</p>
+                    <p class="surnname">ODUSHOLA</p>
+                    <p class="skills">Musician, Band, Brand, Vocalist</p>
+                </div>
+            </div>
+            <div class="right">
 
+            </div>
         </div>
         <div class="music-player">
-
+            <div class="player-image">
+                <img src="img/playerImg.png" alt="image">
+            </div>
+            <div class="song-info">
+                <p class="song-title" id="song-title">IN HIS HANDS</p>
+                <p class="artist-name">Temitope Odushola</p>
+            </div>
+            <div class="controls">
+                <img src="img/skip-backward.png" alt="prev" class="prev" id="prev">
+                <img src="img/play-icon.png" alt="play" class="play" id="play">
+                <img src="img/skip-forward.png" alt="play" class="next" id="next">
+            </div>
+            <div class="time">
+                <!-- <p class="text" id="current-time">2:34</p> -->
+                <div class="seek-bar">
+                    <div class="fill" id="fillBar"></div>
+                </div>
+                <!-- <p class="text" id="song-duration">5:34</p> -->
+            </div>
+            <div class="toggle">
+                <img src="img/repeat-icon.png" alt="repeat">
+                <img src="img/shuffle-icon.png" alt="shuffle" class="shuffle" >
+            </div>
+            <div class="volume">
+                <img src="img/Audio-icon.png" alt="volume">
+                <div class="seek-bar">
+                    <div class="fill"></div>
+                </div>
+            </div>
         </div>
 
     </header>
@@ -50,6 +118,7 @@
     <footer>
 
     </footer>
+    <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
