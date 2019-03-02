@@ -356,14 +356,22 @@ header{
     margin-top: 0rem;
 }
 
-.thoughts .dd img{
-    height: 50vh;
+.thoughts .dd{
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+}
+
+.thoughts .dd img{
+    height: 85vh;
 }
 
 .thoughts .con{
     display: flex;
-    height: 80vh;
+    height: 100vh;
 }
 
 .thoughts .con .left{
@@ -378,6 +386,7 @@ header{
 .thoughts .blog{
     width: 80%;
     text-align: justify;
+    margin-right: 1rem;
 }
 
 .thoughts .con .right{
@@ -386,6 +395,47 @@ header{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #0f1c2ca4;
+    background-color: #0f1c2c;
     background-blend-mode: lighten;
+}
+
+.connect{
+    height: 40vh;
+    background-image: url('../img/connect.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #e8054c;
+    background-blend-mode: screen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.connect .connect-btn{
+    font-size: 2rem;
+    font-family: Silo-Bold;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem 2rem;
+}
+
+footer{
+    height: 15vh;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+footer .social{
+    position: absolute;
+    right: 10%;
+}
+
+footer .social i{
+    margin-right: 1.5rem;
+    color: #e8054c;
 }
