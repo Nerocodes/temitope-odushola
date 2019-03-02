@@ -19,6 +19,11 @@
 }
 
 @font-face{
+    font-family: Silo-ExtraBold;
+    src: url('fonts/Silo-ExtraBold.ttf');
+}
+
+@font-face{
     font-family: OpenSans-LightItalic;
     src: url('fonts/OpenSans-LightItalic.ttf');
 }
@@ -297,7 +302,7 @@ header{
     color: #e8054c;
 }
 
-.about .right .abt-btn{
+.more-btn{
     text-decoration: none;
     color: #e8054c;
     border: 1px solid #f1fffa;
@@ -310,4 +315,77 @@ header{
 .about-hr{
     width: calc(100% - 18rem);
     border-color: #e8054c;
+}
+
+.videos{
+    text-align: center;
+    font-family: Silo-Light;
+    font-size: 2rem;
+}
+
+.videos .con{
+    display: flex;
+    justify-content: space-between;
+}
+
+.videos .con .left, .videos .con .right{
+    width: 49%;
+}
+
+.videos .con .left iframe{
+    border-bottom: 2px solid #e8054c;
+}
+
+.videos iframe{
+    width: 100%;
+    height: 70vh;
+}
+
+.thoughts{
+    position: relative;
+}
+
+.thoughts > .title{
+    text-align: center;
+    font-family: Silo-ExtraBold;
+    font-size: 2rem;
+    position: absolute;
+    width: 100%;
+    background-color: #152D4Aa4;
+    padding: 1.2rem 0rem;
+    margin-top: 0rem;
+}
+
+.thoughts .dd img{
+    height: 50vh;
+    position: absolute;
+}
+
+.thoughts .con{
+    display: flex;
+    height: 80vh;
+}
+
+.thoughts .con .left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+.thoughts .blog{
+    width: 80%;
+    text-align: justify;
+}
+
+.thoughts .con .right{
+    width: 50%;
+    background-image: url('../img/guitar.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0f1c2ca4;
+    background-blend-mode: lighten;
 }
