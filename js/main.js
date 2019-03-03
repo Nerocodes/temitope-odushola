@@ -8,7 +8,8 @@ let currentDuration = document.getElementById('current-time');
 let song = new Audio();
 let currentSong = 0;
 
-window.onload = playSong();
+window.onload = loadSong();
+
 $('#play').click(function(){ 
     playOrPauseSong();
 });
@@ -20,6 +21,12 @@ $('#next').click(function(){
 $('#prev').click(function(){ 
     prev();
 });
+
+function loadSong(){
+    song.src = songs[currentSong];
+    songTitle.textContent = songTitles[currentSong];
+    console.log(song);
+}
 
 function playSong(){
     song.src = songs[currentSong];
