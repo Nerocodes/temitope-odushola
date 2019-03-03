@@ -399,6 +399,82 @@ header{
     background-blend-mode: lighten;
 }
 
+.events {
+    min-height: 60vh;
+    background-color: #ffffff;
+    color: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.events .title{
+    font-family: Silo-Light;
+    font-size: 2rem;
+}
+
+.events .events-table{
+    width: 70%;
+}
+
+.events-table th, .events-table td{
+    border-bottom: 1px solid #e8054c;
+    padding: 1.2rem 0rem;
+}
+
+.events-hr{
+    border-color: #e8054c;
+    width: 70%;
+}
+
+.events-table th{
+    text-align: left;
+    color: #e8054c;
+    
+}
+
+.events-table tr td:last-of-type {
+    text-align: center;
+}
+
+.events-table tr td:nth-of-type(1){
+    width: 3%;
+}
+
+.events-table tr td:nth-of-type(2){
+    width: 25%;
+}
+
+.events-table tr td:nth-of-type(3){
+    width: 15%;
+}
+
+.events-table tr td:nth-of-type(4){
+    width: 15%;
+}
+
+.events-table tr td:nth-of-type(5){
+    width: 15%;
+}
+
+.events-table .book-btn{
+    text-decoration: none;
+    color: #e8054c;
+    border: 1px solid #e8054c;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.events .see-btn{
+    text-decoration: none;
+    color: #e8054c;
+    border: 1px solid #e8054c;
+    border-radius: 1.2rem;
+    padding: 0.5rem 2rem;
+    font-family: Silo-Bold;
+    margin: 2rem;
+}
+
 .connect{
     height: 40vh;
     background-image: url('../img/connect.png');
