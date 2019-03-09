@@ -22,7 +22,7 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#music">Music</a></li>
-                    <li><a href="#shows">Shows</a></li>
+                    <li><a href="#events">Shows</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                     <div class="toggle">
                         <label for="hamburger" class="hide-menu-btn">
@@ -55,7 +55,7 @@
 
             </div>
         </div>
-        <div class="music-player">
+        <div class="music-player" id="music-player">
             <div class="player-image">
                 <img src="img/playerImg.png" alt="image">
             </div>
@@ -76,7 +76,7 @@
                 <!-- <p class="text" id="song-duration">5:34</p> -->
             </div>
             <div class="toggle">
-                <img src="img/repeat-icon.png" alt="repeat">
+                <img src="img/repeat-icon.png" alt="repeat" class="repeat">
                 <img src="img/shuffle-icon.png" alt="shuffle" class="shuffle" >
             </div>
             <div class="volume">
@@ -89,7 +89,38 @@
 
     </header>
     <main>
-        <section class="about">
+        <div class="music-player-mobile" id="music-player">
+            <div class="player-image">
+                <img src="img/playerImg.png" alt="image">
+            </div>
+            <div class="song-info">
+                <p class="song-title" id="song-title">IN HIS HANDS</p>
+                <p class="artist-name">Temitope Odushola</p>
+            </div>
+            <div class="controls">
+                <img src="img/skip-backward.png" alt="prev" class="prev" id="prev">
+                <img src="img/play-icon.png" alt="play" class="play" id="play">
+                <img src="img/skip-forward.png" alt="play" class="next" id="next">
+            </div>
+            <div class="time">
+                <!-- <p class="text" id="current-time">2:34</p> -->
+                <div class="seek-bar">
+                    <div class="fill" id="fillBar"></div>
+                </div>
+                <!-- <p class="text" id="song-duration">5:34</p> -->
+            </div>
+            <div class="toggle">
+                <img src="img/repeat-icon.png" alt="repeat" class="repeat">
+                <img src="img/shuffle-icon.png" alt="shuffle" class="shuffle" >
+            </div>
+            <div class="volume">
+                <img src="img/Audio-icon.png" alt="volume">
+                <div class="seek-bar">
+                    <div class="fill"></div>
+                </div>
+            </div>
+        </div>
+        <section class="about" id="about">
             <div class="left">
                 <img src="img/about.png" alt="Temitope">
             </div>
@@ -121,7 +152,7 @@
                 </div>
             </div>
         </section>
-        <section class="thoughts">
+        <section class="thoughts" id="thoughts">
             <p class="title">THOUGHTS</p>
             <div class="dd">
                 <img src="img/dd.png" alt="quotes icon">
@@ -155,50 +186,52 @@
                 </div>
             </div>
         </section>
-        <section class="events">
+        <section class="events" id="events">
             <h2 class="title">NEXT EVENTS</h2>
-            <table class="events-table">
-                <tr>
-                    <th>#</th>
-                    <th>EVENT</th>
-                    <th>Genre</th>
-                    <th>Place</th>
-                    <th>Date</th>
-                    <th><i class="fas fa-clock"></i></th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td>1.</td>
-                    <td>Event 1</td>
-                    <td>Christian</td>
-                    <td>Eko Hotel</td>
-                    <td>Sunday, Wednesday</td>
-                    <td>1:30</td>
-                    <td><a href="#" class="book-btn">Coming Soon...</a></td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Event 2</td>
-                    <td>Christian</td>
-                    <td>Eko Hotel</td>
-                    <td>Saturday</td>
-                    <td>3:00</td>
-                    <td><a href="#" class="book-btn">Coming Soon...</a></td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Event 3</td>
-                    <td>Christian</td>
-                    <td>Eko Hotel</td>
-                    <td>Friday</td>
-                    <td>2:30</td>
-                    <td><a href="#" class="book-btn">Coming Soon...</a></td>
-                </tr>
-            </table>
+            <div class="table-responsive">
+                <table class="events-table">
+                    <tr>
+                        <th>#</th>
+                        <th>EVENT</th>
+                        <th>Genre</th>
+                        <th>Place</th>
+                        <th>Date</th>
+                        <th><i class="fas fa-clock"></i></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1.</td>
+                        <td>Event 1</td>
+                        <td>Christian</td>
+                        <td>Eko Hotel</td>
+                        <td>Sunday, Wednesday</td>
+                        <td>1:30</td>
+                        <td><a href="#" class="book-btn">Coming Soon...</a></td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Event 2</td>
+                        <td>Christian</td>
+                        <td>Eko Hotel</td>
+                        <td>Saturday</td>
+                        <td>3:00</td>
+                        <td><a href="#" class="book-btn">Coming Soon...</a></td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Event 3</td>
+                        <td>Christian</td>
+                        <td>Eko Hotel</td>
+                        <td>Friday</td>
+                        <td>2:30</td>
+                        <td><a href="#" class="book-btn">Coming Soon...</a></td>
+                    </tr>
+                </table>
+            </div>
             <a href="#" class="see-btn">SEE THEM ALL</a>
             <hr class="events-hr">
         </section>
-        <section class="connect">
+        <section class="connect" id="connect">
             <a href="#" class="connect-btn">CONNECT WITH ME</a>
         </section>
     </main>
