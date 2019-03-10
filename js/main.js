@@ -3,7 +3,8 @@ const songTitles = ["I BELIEVE", "THANK YOU LORD"];
 
 let songTitle = $('.song-title');
 let fillBar = $('.fill-bar');
-let currentDuration = $('.current-time');
+let currentTime = $('.current-time');
+let songDuration = $('.song-duration');
 
 let song = new Audio();
 let currentSong = 0;
@@ -24,20 +25,20 @@ $('.prev').click(function(){
 
 function loadSong(){
     song.src = songs[currentSong];
-    songTitle.textContent = songTitles[currentSong];
-    console.log(song);
+    songTitle.html(songTitles[currentSong]);
 }
 
 function playSong(){
     song.src = songs[currentSong];
     songTitle.html(songTitles[currentSong]);
-    console.log(song);
+    // totalTime(Math.round(song.duration));
     playOrPauseSong();
     song.play();
 };
 
 function playOrPauseSong(){
     console.log('working');
+    totalTime(Math.round(song.duration));
     if(song.paused){
         song.play();
         $('.play').attr("src", "img/pause-icon.png");
@@ -52,7 +53,27 @@ song.addEventListener('timeupdate', function() {
     let position = song.currentTime / song.duration;
     // currentDuration.textContent = song.currentTime;
     fillBar.css('width', position * 100 + '%' );
+
+    convertTime(Math.round(song.currentTime));
 });
+
+function convertTime(seconds){
+    let min = Math.floor( seconds / 60 );
+    let sec = seconds % 60;
+    min = (min < 10) ? `0${min}` : min;
+    sec = (sec < 10) ? `0${sec}` : sec;
+    currentTime.html(`${min}:${sec}`);
+}
+
+function totalTime(seconds){
+    console.log('I was called');
+    let min = Math.floor( seconds / 60 );
+    let sec = seconds % 60;
+    min = (min < 10) ? `0${min}` : min;
+    sec = (sec < 10) ? `0${sec}` : sec;
+    console.log(min, sec, seconds, currentTime);
+    songDuration.html(`${min}:${sec}`);
+}
 
 function next(){
     currentSong++;
