@@ -40,7 +40,6 @@ function playSong(){
 
 function playOrPauseSong(){
     console.log('working');
-    totalTime(Math.round(song.duration));
     if(song.paused){
         song.play();
         $('.play').attr("src", "img/pause-icon.png");
@@ -56,7 +55,7 @@ song.addEventListener('timeupdate', function() {
     fillBar.css('width', position * 100 + '%' );
 
     convertTime(Math.round(song.currentTime));
-
+    totalTime(Math.round(song.duration));
     if(song.ended){
         next();
     }
@@ -72,6 +71,9 @@ function convertTime(seconds){
 
 function totalTime(seconds){
     console.log('I was called');
+    if(isNaN(seconds)){
+        seconds = 0;
+    }
     let min = Math.floor( seconds / 60 );
     let sec = seconds % 60;
     min = (min < 10) ? `0${min}` : min;
