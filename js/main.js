@@ -5,6 +5,7 @@ let songTitle = $('.song-title');
 let fillBar = $('.fill-bar');
 let currentTime = $('.current-time');
 let songDuration = $('.song-duration');
+let fillVolume = $('.fill-volume');
 
 let song = new Audio();
 let currentSong = 0;
@@ -26,12 +27,13 @@ $('.prev').click(function(){
 function loadSong(){
     song.src = songs[currentSong];
     songTitle.html(songTitles[currentSong]);
+    console.log(fillVolume.css('width'));
+    song.volume = parseInt(fillVolume.css('width')) / 100;
 }
 
 function playSong(){
     song.src = songs[currentSong];
     songTitle.html(songTitles[currentSong]);
-    // totalTime(Math.round(song.duration));
     playOrPauseSong();
     song.play();
 };
@@ -51,10 +53,13 @@ function playOrPauseSong(){
 
 song.addEventListener('timeupdate', function() {
     let position = song.currentTime / song.duration;
-    // currentDuration.textContent = song.currentTime;
     fillBar.css('width', position * 100 + '%' );
 
     convertTime(Math.round(song.currentTime));
+
+    if(song.ended){
+        next();
+    }
 });
 
 function convertTime(seconds){
@@ -90,3 +95,52 @@ function prev(){
     }
     playSong();
 }
+
+$(document).on('click','.fill-volume, .v-seek-bar', function(e){
+    var offset = $(this).offset();
+    var relativeX = e.pageX - offset.left;
+    var wide = $(this).width();
+    var percentX = (relativeX*100)/wide;
+    song.volume = percentX / 100;
+    fillVolume.css('width', percentX);
+    console.log(percentX);
+});
+
+$(document).on('click','.fill-bar, .s-seek-bar', function(e){
+    var offset = $(this).offset();
+    var relativeX = e.pageX - offset.left;
+    var wide = $(this).width();
+    var percentX = (relativeX*100)/wide;
+    let position = percentX / 100;
+    song.currentTime = position * song.duration;
+    fillBar.css('width', `${percentX}%`);
+    console.log(percentX);
+});
+
+$('.repeat').click(function() {
+    if($('.repeat').css('background-color') == 'rgb(232, 5, 76)'){
+        $('.repeat').css({
+            'background-color': '#e8054c00',
+            'border-radius': '0%'
+        });
+    } else{
+        $('.repeat').css({
+            'background-color': '#e8054c',
+            'border-radius': '50%'
+        });
+    }
+});
+
+$('.shuffle').click(function() {
+    if($('.shuffle').css('background-color') == 'rgb(232, 5, 76)'){
+        $('.shuffle').css({
+            'background-color': '#e8054c00',
+            'border-radius': '0px'
+        });
+    } else {
+        $('.shuffle').css({
+            'background-color': '#e8054c',
+            'border-radius': '50%'
+        });
+    }
+});
